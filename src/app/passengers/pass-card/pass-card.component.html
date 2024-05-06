@@ -1,0 +1,24 @@
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="form-group">
+            <input 
+        [disabled]="!isinEditMode"
+        type="text" #fullname [value]="passObj.fullname" 
+        class="form-control"
+        >
+        </div>
+    <p class="font-weight-bold">
+        CheckIn Date : {{passObj.checkInDate ? (passObj.checkInDate | date) : 'Not Checkin Yet'}};
+    </p>
+    <p>
+        Child Count : {{passObj.children ? (passObj.children.length) : 0}}
+    </p>
+</div>
+<div class="card-footer">
+    <button mat-raised-button color="primary" (click)="onEditMode()" *ngIf="!isinEditMode">Edit</button>
+    <button mat-raised-button color="primary" (click)="onDoneMode(fullname.value)" *ngIf="isinEditMode">Done</button>
+    <button mat-raised-button color="warn" class="ml-3"
+    (click)="onDelete()"
+    >Delete</button>
+</div>
+</div>

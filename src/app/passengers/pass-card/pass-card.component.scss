@@ -1,0 +1,6 @@
+
+.form-control:disabled, .form-control[readOnly]{
+    background-color: transparent;
+    opacity: 1;
+    border: 0;
+}
